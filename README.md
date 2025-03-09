@@ -113,11 +113,13 @@ Theo ý e hiểu ý thì nó giống như là 1 thằng trong tù(cục bộ) v�
     - Được khai báo ngoài tất cả các hàm.
     - Có thể truy cập từ bất kỳ đâu trong chương trình.
     - Giá trị của nó được giữ nguyên trong suốt quá trình chạy chương trình.
+    - Khi không khởi tạo giá trị biến toàn cục sẽ gắn nó bằng 0.
 - Biến cục bộ (Local Variable)
    - Được khai báo bên trong một hàm hoặc một khối {}.
    - Chỉ có thể sử dụng trong phạm vi hàm chứa nó.
    - Biến sẽ bị xóa khỏi bộ nhớ khi kết thúc phạm vi của nó.
    - Để sử dụng thì mình sẽ dùng return để nó trả về giá trị.
+   - Khi không khởi tạo giá trị biến cục bộ sẽ coi nó là giá trị rác.
 
   
 
