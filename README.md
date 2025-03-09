@@ -1,11 +1,10 @@
-# Task-1
+# Task1
 Tổng hợp kiến thức.
 
 ## Kiểu dữ liệu là gi?
-
-### Được chia thành 2 lớp:
-- Kiểu dữ liệu đơn giản Là kiểu biểu diễn được lưu trong 1 biến và chỉ biểu diễn được 1 giá trị.
--  Kiểu dữ liệu cấu trúc là kiểu biển diễn được nhiều thành phần dữ liệu( mảng, cấu trúc, hợp và tệp).
+- Được chia thành 2 lớp:
+   - Kiểu dữ liệu đơn giản Là kiểu biểu diễn được lưu trong 1 biến và chỉ biểu diễn được 1 giá trị.
+   - Kiểu dữ liệu cấu trúc là kiểu biển diễn được nhiều thành phần dữ liệu( mảng, cấu trúc, hợp và tệp).
 
 ## Các kiểu dữ liệu nguyên thủy:
 | Kiểu dữ liệu | Đặc tính biểu diễn | Độ lớn | Giá trị tối thiểu | Giá trị tối đa | 
@@ -90,9 +89,9 @@ int main (){
 ```
 
 ## Các biến được khai báo lệch bao nhiêu đơn vị?
- - @@ mình sẽ thêm đoạn code này vào để tính sự chênh lệch nha T_T
+ - @@ mình sẽ thêm đoạn code này vào để tính sự chênh lệch đơn vị(byte) T_T
 ``` C
-    printf("a -> b: %d byte\n", (char*)&a - (char*)&b); // ép kiểu về char để giúp mình tính chinh xác hơn
+    printf("a -> b: %d byte\n", (char*)&a - (char*)&b); // ép kiểu về char để giúp mình tính được và chinh xác hơn
     printf("b -> c: %d byte\n", (char*)&b - (char*)&c);
     printf("c -> d: %d byte\n", (char*)&c - (char*)&d);
     printf("d -> e: %d byte\n", (char*)&d - (char*)&e);
@@ -100,7 +99,7 @@ int main (){
     printf("f -> g: %d byte\n", (char*)&f - (char*)&g);
     printf("g -> h: %d byte\n", (char*)&g - (char*)&h);
 ```
-- Đây sẽ là kết quả chúng ta có được
+- Đây sẽ là kết quả chúng ta có được:
  
 ![image](https://github.com/user-attachments/assets/86f08f6e-af90-474f-a10a-ec5634db0de4)
 
@@ -109,6 +108,17 @@ int main (){
   - Vì 8 biến có kiểu dữ liệu khác nhau, kích thước mà bộ nhớ dành cho chúng cũng khác nên khoảng cách giữa các địa chỉ không đồng đều.
 
 ## Chỉ ra điểm khác biệt giữa biến toàn cục, biến cục bộ.
+Theo ý e hiểu ý thì nó giống như là 1 thằng trong tù(cục bộ) và 1 thằng lang thang đầu đường xó chợ(toàn cục).
+- Toàn cục:
+    - Được khai báo ngoài tất cả các hàm.
+    - Có thể truy cập từ bất kỳ đâu trong chương trình.
+    - Giá trị của nó được giữ nguyên trong suốt quá trình chạy chương trình.
+- Biến cục bộ (Local Variable)
+   - Được khai báo bên trong một hàm hoặc một khối {}.
+   - Chỉ có thể sử dụng trong phạm vi hàm chứa nó.
+   - Biến sẽ bị xóa khỏi bộ nhớ khi kết thúc phạm vi của nó.
+   - Để sử dụng thì mình sẽ dùng return để nó trả về giá trị.
+
   
 
 
