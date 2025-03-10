@@ -129,10 +129,10 @@ int main (){
 Theo ý e hiểu ý thì nó giống như là 1 thằng trong tù(cục bộ) và 1 thằng lang thang đầu đường xó chợ(toàn cục).
 - Toàn cục:
     - Được khai báo ngoài tất cả các hàm.
-    - Có thể truy cập từ bất kỳ đâu trong chương trình.
+    - Đặt khai báo biến trước rồi mới đến khai báo hàm.
     - Giá trị của nó được giữ nguyên trong suốt quá trình chạy chương trình.
     - Khi không khởi tạo giá trị biến toàn cục sẽ gắn nó bằng 0.
-- Biến cục bộ (Local Variable)
+-  Cục bộ 
    - Được khai báo bên trong một hàm hoặc một khối {}.
    - Chỉ có thể sử dụng trong phạm vi hàm chứa nó.
    - Biến sẽ bị xóa khỏi bộ nhớ khi kết thúc phạm vi của nó.
