@@ -12,9 +12,33 @@ Tổng hợp kiến thức.
 | short | Số nguyên | 2 byte |  |
 | int | Số nguyên | 4 byte | %d |
 | long long | Số nguyên | 8 byte | %lld |
-| float | Số thực (nó lưu được 6 chữ số ở phần thập phân) | 4 byte | %f |
-| double | Số thực (nó lưu được 15 chữ số ở phần thập phân) | 8 byte | %lf |
------------------------------------------------------
+| float | Số thực | 4 byte | %f |
+| double | Số thực | 8 byte | %lf |
+- float biểu diễn được chính xác 5 số thập phân sau dấu " . " :
+``` C
+  #include <stdio.h>
+  int main (){
+	float a = 46.46846953752312412345;
+	printf("%0.20f", a);
+}
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/746e9e7c-3e5c-4bba-ba84-0dfea0158aaf)
+
+- double biểu diễn được chính xác 14 số thập phân sau dấu " . " :
+``` C
+#include <stdio.h>
+int main (){
+	double a = 46.46846953752312412345;
+	printf("%0.20f", a);
+}
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/636aa3d3-5d59-4e92-81b5-4007a6dc27de)
+
+
 ## Sự khác nhau giữa kiểu dữ liệu có dấu và không dấu
 - Kiểu dữ liệu có dấu (signed) có thể lưu trữ cả số âm và số dương.
 - Kiểu dữ liệu không dấu (unsigned) chỉ lưu trữ số dương, giúp tăng phạm vi giá trị có thể lưu trữ.
