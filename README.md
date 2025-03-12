@@ -126,7 +126,7 @@ int main (){
 ## Các biến được khai báo lệch bao nhiêu đơn vị?
  - @@ mình sẽ thêm đoạn code này vào để tính sự chênh lệch đơn vị(byte) T_T
 ``` C
-    printf("a -> b: %d byte\n", (char*)&a - (char*)&b); 
+    printf("a -> b: %d byte\n", (char*)&a - (char*)&b); //char* là 8byte nha, không ép kiểu thì nó báo lỗi nên phải ép sang kiểu nào 8byte cho tương ứng với độ lớn của địa chỉ là được, ở đây chắc đều code chương trình 64bit nên sẽ là độ lớn địa chỉ mặc định 8byte 
     printf("b -> c: %d byte\n", (char*)&b - (char*)&c);
     printf("c -> d: %d byte\n", (char*)&c - (char*)&d);
     printf("d -> e: %d byte\n", (char*)&d - (char*)&e);
@@ -141,7 +141,7 @@ int main (){
 - Để giải thích cho kết quả trên:
    - Do vị trí của bộ nhớ các biến được cấp phát vị trí trong bộ nhớ theo thứ tự khai báo biến a được cấp phát trước, lần lượt là b -> h.
    - Kết quả là 1,2,4,4,...,4. Điều này có thể xảy ra vì: char chỉ chiếm 1 byte. int chiếm 4 byte....
-- Cụ thể hơn tham khảo ví dụ của a Sơn:
+ - Cụ thể hơn tham khảo ví dụ của a Sơn:
   
 ![image](https://github.com/user-attachments/assets/4c17f531-8ffe-48f3-a962-fb0696f40b89)
 - Khi mà cái float nó khai báo trước cái char thì float đang ở địa chỉ cao hơn. Giả sử thằng float đang ở 48 thì 4 byte thằng float là 51 50 49 48, char khai báo sau nên nó sẽ đưa vào địa chỉ thấp hơn là 47. int là 4 byte nên để tối ưu bộ nhớ thì nó sẽ lưu ở ô chia hết cho 4, 47 - 4 = 43 không thỏa mãn nên buộc nó phải xuống ô 40 nên cách nhau 7 byte. 
