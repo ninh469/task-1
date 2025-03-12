@@ -3,13 +3,13 @@ Tổng hợp kiến thức.
 ## Kiểu dữ liệu là gi?
 - Được chia thành 2 lớp:
    - Kiểu dữ liệu đơn giản Là kiểu biểu diễn được lưu trong 1 biến và chỉ biểu diễn được 1 giá trị.
-   - Kiểu dữ liệu cấu trúc là kiểu biển diễn được nhiều thành phần dữ liệu( mảng, cấu trúc, hợp và tệp).
+   - Kiểu dữ liệu cấu trúc là kiểu biển diễn được nhiều thành phần dữ liệu(mảng, cấu trúc, hợp và tệp).
 ## Các kiểu dữ liệu nguyên thủy:
 | Kiểu dữ liệu | Đặc tính biểu diễn | Độ lớn | Đặc tả | 
 | ------------ | ------------------ | ------ | ------ |
 | bool | Giá trị logic | 1 byte |  |
 | char | Ký tự | 1 byte | %c | 
-| short | Số nguyên | 2 byte |  |
+| short | Số nguyên | 2 byte | %d |
 | int | Số nguyên | 4 byte | %d |
 | long long | Số nguyên | 8 byte | %lld |
 | float | Số thực | 4 byte | %f |
