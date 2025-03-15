@@ -1,5 +1,10 @@
 # Task 2
+## Con trỏ là gi?
+Con trỏ là biến thông thường nhưng mà giá trị được lưu của nó lại là địa chỉ của biến khác.
 ## Cách sử dụng
+- Cú pháp:
+  - Xem giá trị tại vùng nhớ trỏ tới: *<con_tro>
+  - Địa chỉ được trỏ tới: <con_tro>
 ``` C
 #include<stdio.h>
 int main(){
