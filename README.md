@@ -152,9 +152,9 @@ int main (){
 ## Chỉ ra điểm khác biệt giữa biến toàn cục, biến cục bộ.
 Theo ý e hiểu ý thì nó giống như là 1 thằng trong tù(cục bộ) và 1 thằng lang thang đầu đường xó chợ(toàn cục).
 - Toàn cục:
-    - Được khai báo ngoài tất cả các hàm.
+    - Được khai báo ngoài hàm.
     - Đặt khai báo biến trước rồi mới đến khai báo hàm.
-    - Giá trị của nó được giữ nguyên trong suốt quá trình chạy chương trình.
+    - Giá trị của nó được sử dụng trong toàn bộ chương trình.
     - Khi không khởi tạo giá trị biến toàn cục sẽ gắn nó bằng 0.
 -  Cục bộ 
    - Được khai báo bên trong một hàm hoặc một khối {}.
