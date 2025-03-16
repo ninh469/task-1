@@ -50,8 +50,9 @@ int main()
 }
 ```
 ## Mảng 1 chiều là gì?
-- Mảng là một tập hợp các phần tử có cùng kiểu dữ liệu, được lưu trữ liên tiếp trong bộ nhớ và được quản lý dưới một tên chung.
+- là một tập hợp các phần tử có cùng kiểu dữ liệu, được lưu trữ liên tiếp trong bộ nhớ và được quản lý dưới một tên chung.
 ## Cách truy cập tới phần tử thứ n mà không dùng cú pháp cơ bản(arr[n]) thay vào đó sử dụng con trỏ.
+- Thay vì a[n] ta có thể sử dụng *(a+n).
 ``` C
 #include<stdio.h>
 int main(){
@@ -71,9 +72,10 @@ for(int i = 0; i < n; i++){
 ## Nêu ý nghĩa của việc xây dựng hàm 
 - Chia nhỏ chương trình thành các phần nhỏ hơn để dễ quản lý.
 - Có thể tái sử dụng nhiều lần.
-- Dễ dàng sửa lỗi hơn thay vì phải sửa cả chương trình.
+- Dễ dàng sửa lỗi, nâng cấp, thay đổi chương trình.
 - Tăng độ rõ ràng của chương trình.
-## Các loại hàm, cú pháp xây dựng hàm:
+- Tiết kiệm bộ nhớ.
+## Các loại hàm:
 - Hàm trả về giá trị:
 ``` C
 #include <stdio.h>
@@ -110,7 +112,7 @@ int main(){
 }
 ```
 ## Chỉ ra vì sao chương trình dưới đây không thực hiện thành công mục đích đảo đổi giá trị 2 biến? 
-cái này Ninh sẽ sửa khi ăn cơm xong :((( ai lại băt người đói không có năng lượng làm việc
+- Khi khai báo trong hàm swap(a,b) phạm vi sử dụng chỉ nằm trong hàm, việc truyền 2 biến a,b ở ngoài vào hàm chỉ là hành vi gán giá trị, sau khi swap thì 2 biến trong hàm vẫn có thay đổi giá trị nhưng không thay đổi giá trị giữa 2 biến a,b ở hàm main vì thứ truyền vào chỉ là giá trị.
 
 ## Thực hiện sửa lại chương trình để chương trình hoạt động bình thường.
 ``` C
