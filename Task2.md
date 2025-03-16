@@ -110,9 +110,7 @@ int main(){
 }
 ```
 ## Chỉ ra vì sao chương trình dưới đây không thực hiện thành công mục đích đảo đổi giá trị 2 biến? 
-- Chương trình không thực hiện được là vì hàm void swap là hàm không trả giá trị về nên ta sẽ sử dụng con trỏ để trả giá trị lại về cho hàm main, cụ thể thêm:
-   - Nếu mà k sử dụng con trỏ thì chương trình sẽ hiểu là mình đổi biến trên hàm swap nó là nên nó k ảnh hưởng đến a,b ở hàm main được. Chương trình nó chạy từ hàm main lên swap , nhma swap(a,b) nó chỉ truyền giá trị a,b vào swap chứ không đảo giá trị(trả giá trị).
-   - Nếu có con trỏ thì thực chất chương trình nó sẽ hiểu được luôn là mình muốn đổi giá trị của biến a với biến b thông qua *a,*b.
+cái này Ninh sẽ sửa khi ăn cơm xong :((( ai lại băt người đói không có năng lượng làm việc
 
 ## Thực hiện sửa lại chương trình để chương trình hoạt động bình thường.
 ``` C
