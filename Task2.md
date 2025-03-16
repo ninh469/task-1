@@ -15,8 +15,11 @@ printf("dia chi duoc tro toi %p", p); // dia chi duoc tro toi là dia chi cua a
 }
 ```
 ## Ứng dụng của con trỏ 
-- Đảo giá trị của nhiều biến
-- Kiểm soát địa chỉ
+- Truyền tham chiếu trong hàm.
+- Kiểm soát địa chỉ.
+- Thao tác với mảng và chuỗi.
+- Xây dựng cấu trúc dữ liệu phức tạp
+- Tối ưu hóa hiệu suất.
 - continue
 ## Xây dựng chương trình ứng dụng
 - Sắp xếp 3 số theo thứ tự tăng dần
@@ -47,7 +50,7 @@ int main()
 }
 ```
 ## Mảng 1 chiều là gì?
-- Là tập hợp gồm nhiều phần tử có cùng 1 kiểu dữ liệu và chung 1 tên gọi, nhưng được phân biệt bởi chỉ số.
+- Mảng là một tập hợp các phần tử có cùng kiểu dữ liệu, được lưu trữ liên tiếp trong bộ nhớ và được quản lý dưới một tên chung.
 ## Cách truy cập tới phần tử thứ n mà không dùng cú pháp cơ bản(arr[n]) thay vào đó sử dụng con trỏ.
 ``` C
 #include<stdio.h>
@@ -63,13 +66,52 @@ for(int i = 0; i < n; i++){
 }
 ```
 ## Hàm là gì? 
-- Hàm là một các khối lệnh có nhiệm vụ thực hiện một chức năng nào đó.
+- Hàm là một khối lệnh thực hiện một nhiệm vụ cụ thể nào đó và có thể được gọi nhiều lần trong chương trình.
+- Cú pháp xây dựng hàm: ten_ham(tham_so)
 ## Nêu ý nghĩa của việc xây dựng hàm 
-- Chia công việc nhóm
-- Có thể tái sử dụng nhiều lần 
+- Chia nhỏ chương trình thành các phần nhỏ hơn để dễ quản lý.
+- Có thể tái sử dụng nhiều lần.
+- Dễ dàng sửa lỗi hơn thay vì phải sửa cả chương trình.
+- Tăng độ rõ ràng của chương trình.
+## Các loại hàm, cú pháp xây dựng hàm:
+- Hàm trả về giá trị:
+``` C
+#include <stdio.h>
+int check( int a, int b){
+	if ( a > b){
+		return a;
+	} if ( b > a){
+		return b;
+	} return a;
+} 
+
+int main(){
+	int a,b;
+	scanf("%d%d", &a,&b);
+	int c = check(a,b);
+	printf ("%d", c);
+}
+```
+- Hàm không trả giá trị:
+``` C
+#include <stdio.h>
+void check( int a, int b){
+	if ( a > b){
+	printf("%d", a);
+	} if ( b > a){
+	printf("%d", b);
+	} printf ("%d", a);
+} 
+
+int main(){
+	int a,b;
+	scanf("%d%d", &a,&b);
+    check(a,b);
+}
+```
 ## Chỉ ra vì sao chương trình dưới đây không thực hiện thành công mục đích đảo đổi giá trị 2 biến? 
 - Chương trình không thực hiện được là vì hàm void swap là hàm không trả giá trị về nên ta sẽ sử dụng con trỏ để trả giá trị lại về cho hàm main, cụ thể thêm:
-   - Nếu mà k sử dụng con trỏ thì chương trình sẽ hiểu là mình đổi biến trên hàm swap nó là biến ảo nên nó k ảnh hưởng đến a,b ở hàm main được. Chương trình nó chạy từ hàm main lên swap , nhma swap(a,b) nó chỉ truyền giá trị a,b vào swap chứ không đảo giá trị(trả giá trị).
+   - Nếu mà k sử dụng con trỏ thì chương trình sẽ hiểu là mình đổi biến trên hàm swap nó là nên nó k ảnh hưởng đến a,b ở hàm main được. Chương trình nó chạy từ hàm main lên swap , nhma swap(a,b) nó chỉ truyền giá trị a,b vào swap chứ không đảo giá trị(trả giá trị).
    - Nếu có con trỏ thì thực chất chương trình nó sẽ hiểu được luôn là mình muốn đổi giá trị của biến a với biến b thông qua *a,*b.
 
 ## Thực hiện sửa lại chương trình để chương trình hoạt động bình thường.
