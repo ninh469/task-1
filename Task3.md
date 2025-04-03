@@ -54,7 +54,131 @@ int main(){
 
 ## Bài tập
 ```C
+#include<stdio.h>
+#include<string.h>
 
+typedef struct{
+	char hoten[100];
+	int tuoi;
+	double diemtb;
+}Qlsv;
+Qlsv nhapthongtinSv(){
+	Qlsv sv;
+	printf("Nhap ho ten: ");
+	fgets(sv.hoten, sizeof(sv.hoten), stdin);
+	sv.hoten[strcspn(sv.hoten,"\n")] = '\0';
+	printf("Nhap tuoi: ");
+	scanf("%d", &sv.tuoi);
+	printf("Nhap diem TB: ");
+	scanf("%lf", &sv.diemtb);
+	getchar();
+	return sv;
+};
+
+void hienthithongtin(Qlsv sv){
+	printf("%-20s%-10d%-10.2f\n",sv.hoten, sv.tuoi, sv.diemtb);
+}
+
+void hienthidanhsach(Qlsv sinhvien[], int n){
+	printf("DANH SACH SINH VIEN\n");
+	printf("%-5s%-20s%-10s%-10s\n","STT","Ho Ten","Tuoi","Diem TB");
+	for( int i = 0; i < n;i++){
+		printf("%-5d", i + 1);
+		hienthithongtin(sinhvien[i]);
+	}
+}
+
+int timsinhvien (Qlsv sinhvien[], int n, char hotencantim[]){
+	for ( int i = 0; i < n; i++){
+		if (strcmp(hotencantim,sinhvien[i].hoten) == 0) return i;
+	} return -1;
+}
+
+int chensvbatky(Qlsv sinhvien[], int n, char hotencanchen[]) {
+    int kiepnan = timsinhvien(sinhvien, n, hotencanchen);
+	if ( kiepnan < 0){
+		printf("Khong tim thay sinh vien %s\n",hotencanchen);
+	} else {
+		Qlsv svmoi = nhapthongtinSv();
+		for (int i = n; i > kiepnan + 1; i--){
+			sinhvien[i] = sinhvien[i - 1];
+		}sinhvien[kiepnan + 1] = svmoi;
+		n++;
+	} 
+	return n;
+}
+
+int xoasinhvien(Qlsv sinhvien[], int n, char hotencanxoa[]) {
+    int kiepnan = timsinhvien(sinhvien, n, hotencanxoa);
+	if ( kiepnan < 0){
+		printf("Khong tim thay sinh vien %s\n",hotencanxoa);
+	} else {
+		while ( kiepnan < n - 1){
+			sinhvien[kiepnan] = sinhvien[kiepnan + 1];
+			kiepnan++;
+		} n--;
+	} return n;
+}
+
+void suasinhvien(Qlsv sinhvien[], int n, char hotencansua[]){
+	int kiepnan = timsinhvien(sinhvien,n,hotencansua);
+	if ( kiepnan < 0){
+		printf("Khong tim thay sinh vien %s\n",hotencansua);
+	} else {
+		printf("Nhap thong tin moi cua sinh vien\n");
+		Qlsv suasv = nhapthongtinSv();
+		sinhvien[kiepnan] = suasv;
+	}
+}
+void menu(){
+	printf("Menu\n");
+	printf("1. Chen them mot sinh vien vao sau sinh vien bat ki\n");
+    printf("2. Xoa mot sinh vien\n");
+    printf("3. Sua mot sinh vien\n");
+    printf("4. Ket thuc chuong trinh\n");
+    printf("Lua chon: ");
+}
+int main (){
+	int n;
+	scanf("%d",&n);
+	getchar();
+	Qlsv sinhvien[n];
+	for ( int i = 0; i<n;i++){
+		sinhvien[i] = nhapthongtinSv();
+	}
+	hienthidanhsach(sinhvien,n);
+	
+		menu();
+		int chon;
+		scanf("%d", &chon);
+		getchar();
+		char hotencantim[100];
+		switch(chon){
+			case 1: 
+			printf("Ban vua chon chuc nang 1: Chen them mot sinh vien vao sau sinh vien bat ki\n");
+			printf("Nhap ho ten sinh vien can chen: ");
+            fgets(hotencantim, sizeof(hotencantim), stdin);
+			n = chensvbatky(sinhvien,n,hotencantim);
+			hienthidanhsach(sinhvien,n);
+			break;
+			case 2: printf("Ban vua chon chuc nang 2: Xoa mot sinh vien\n");
+			printf("Nhap ho ten sinh vien can xoa: ");
+			fgets(hotencantim, sizeof(hotencantim), stdin);
+			n = xoasinhvien(sinhvien,n,hotencantim);
+			hienthidanhsach(sinhvien,n);
+			break;
+			case 3: printf("Ban vua chon chuc nang 3: Sua mot sinh vien\n");
+			printf("Nhap ho ten sinh vien can sua: ");
+			fgets(hotencantim, sizeof(hotencantim), stdin);
+			suasinhvien(sinhvien,n,hotencantim);
+			hienthidanhsach(sinhvien,n);
+			break;
+			case 4: printf("Ket thuc chuong trinh");
+			break;
+			default : printf("Xin hay tha cho toi\n");
+			
+	}
+}
 ```
 
 
