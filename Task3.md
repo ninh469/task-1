@@ -132,51 +132,82 @@ void suasinhvien(Qlsv sinhvien[], int n, char hotencansua[]){
 }
 void menu(){
 	printf("Menu\n");
-	printf("1. Chen them mot sinh vien vao sau sinh vien bat ki\n");
-    printf("2. Xoa mot sinh vien\n");
-    printf("3. Sua mot sinh vien\n");
-    printf("4. Ket thuc chuong trinh\n");
+	printf("1. Tao danh sach sinh vien\n");
+	printf("2. Hien thi danh sach sinh vien\n");
+	printf("3. Chen them mot sinh vien vao sau sinh vien bat ki\n");
+    printf("4. Xoa mot sinh vien\n");
+    printf("5. Sua mot sinh vien\n");
     printf("Lua chon: ");
 }
 int main (){
-	int n;
+	int n, quaylai_1 = 0;
+	printf("Nhap so luong sinh vien: ");
 	scanf("%d",&n);
 	getchar();
 	Qlsv sinhvien[n];
-	for ( int i = 0; i<n;i++){
-		sinhvien[i] = nhapthongtinSv();
-	}
-	hienthidanhsach(sinhvien,n);
-	
-		menu();
+	menu();
+	while (1){
 		int chon;
 		scanf("%d", &chon);
 		getchar();
 		char hotencantim[100];
 		switch(chon){
 			case 1: 
-			printf("Ban vua chon chuc nang 1: Chen them mot sinh vien vao sau sinh vien bat ki\n");
+			quaylai_1 = 1;
+			printf("Ban vua chon chuc nang 1: Tao danh sach sinh vien\n");
+			for (int i = 0; i < n; i++){
+                    sinhvien[i] = nhapthongtinSv();
+            } break;
+            case 2: 
+			if (quaylai_1 == 0){
+				printf("Vui long tao danh sach sinh vien\n");
+				break;
+			} else {
+				printf("Ban vua chon chuc nang 2: Hien thi danh sach sinh vien\n");	
+			hienthidanhsach(sinhvien,n);
+            break;
+			}
+			case 3:
+			if (quaylai_1 == 0){
+				printf("Vui long tao danh sach sinh vien\n");
+				break;
+			} else {
+			printf("Ban vua chon chuc nang 3: Chen them mot sinh vien vao sau sinh vien bat ki\n");	
 			printf("Nhap ho ten sinh vien can chen: ");
             fgets(hotencantim, sizeof(hotencantim), stdin);
+            hotencantim[strcspn(hotencantim,"\n")] = '\0';
 			n = chensvbatky(sinhvien,n,hotencantim);
 			hienthidanhsach(sinhvien,n);
 			break;
-			case 2: printf("Ban vua chon chuc nang 2: Xoa mot sinh vien\n");
+			}
+		    case 4: 
+		    if (quaylai_1 == 0){
+				printf("Vui long tao danh sach sinh vien\n");
+				break;
+			} else {
+			printf("Ban vua chon chuc nang 4: Xoa mot sinh vien\n");
 			printf("Nhap ho ten sinh vien can xoa: ");
 			fgets(hotencantim, sizeof(hotencantim), stdin);
+			hotencantim[strcspn(hotencantim,"\n")] = '\0';
 			n = xoasinhvien(sinhvien,n,hotencantim);
 			hienthidanhsach(sinhvien,n);
 			break;
-			case 3: printf("Ban vua chon chuc nang 3: Sua mot sinh vien\n");
+		    }
+			case 5: 
+			if (quaylai_1 == 0){
+				printf("Vui long tao danh sach sinh vien\n");
+				break;
+			} else {
+			printf("Ban vua chon chuc nang 5: Sua mot sinh vien\n");
 			printf("Nhap ho ten sinh vien can sua: ");
 			fgets(hotencantim, sizeof(hotencantim), stdin);
+			hotencantim[strcspn(hotencantim,"\n")] = '\0';
 			suasinhvien(sinhvien,n,hotencantim);
 			hienthidanhsach(sinhvien,n);
 			break;
-			case 4: printf("Ket thuc chuong trinh");
-			break;
-			default : printf("Xin hay tha cho toi\n");
-			
+	     	}
+		    default : printf("Xin hay tha cho toi, Vui long nhap lai\n");	
+	    } menu();
 	}
 }
 ```
