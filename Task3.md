@@ -141,10 +141,7 @@ void menu(){
 }
 int main (){
 	int n, quaylai_1 = 0;
-	printf("Nhap so luong sinh vien: ");
-	scanf("%d",&n);
-	getchar();
-	Qlsv sinhvien[n];
+	Qlsv sinhvien[100];
 	menu();
 	while (1){
 		int chon;
@@ -155,6 +152,9 @@ int main (){
 			case 1: 
 			quaylai_1 = 1;
 			printf("Ban vua chon chuc nang 1: Tao danh sach sinh vien\n");
+			printf("Nhap so luong sinh vien: ");
+			scanf("%d",&n);
+			getchar();
 			for (int i = 0; i < n; i++){
                     sinhvien[i] = nhapthongtinSv();
             } break;
