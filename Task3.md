@@ -44,7 +44,19 @@ int main(){
 	printf("Ten phim: %s", phim.tenphim);
 	printf("Nam chieu: %d", phim.namchieu);
 }
-``` 
+```
+## Phân biệt struct với union, array.
+|             | struct | union | array |
+| ----------- | ------ | ----- | ----- |
+| Bố trí bộ nhớ | Mỗi thành phần chia thành vùng riêng biệt | Các thành phần dùng chung | Các phần tử được lưu trữ liên tiếp trong bộ nhớ |
+| Kiểu dữ liệu | Chứa được nhiều KDL | Tương tự struct | Chỉ chứa được các thành phần có cùng 1 KDL |
+| Cách truy cập | Theo thuộc tính ( truy cập đồng thời tới tất cả các thành phần )  | Theo thuộc tính ( tại một thời điểm chỉ chứa giá trị của 1 thuộc tính duy nhất  | Theo chỉ số |
+
+## Bài tập
+```C
+
+```
+
 
 
   
