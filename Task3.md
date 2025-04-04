@@ -52,6 +52,49 @@ int main(){
 | Kiểu dữ liệu | Chứa được nhiều kdl | Chỉ chứa được một kdl tại một thời điểm  | Chỉ chứa được các thành phần có cùng 1 KDL |
 | Cách truy cập | Theo thuộc tính  | Theo thuộc tính | Theo chỉ số |
 | Cách khai báo | struct ten_struct{ các thành phần }; | union ten_union{ các thành phần }; | kdl ten_mang[size] |
+### Ví dụ trực quan về struct và union
+```C
+#include <stdio.h>
+#include <string.h>
+struct thuvien {
+	int Nam;
+	char tentg[100];
+	char tentp[100];
+};
+int main(){
+	struct thuvien tv;
+	tv.Nam = 1900;
+	strcpy ( tv.tentg, "ffhkgh");
+	strcpy ( tv.tentp, "Drama");
+	printf("Nam: %d\nTen tac gia: %s\nTen tac pham: %s",tv.Nam,tv.tentg,tv.tentp);
+	
+}
+```
+Output: 
+
+![image](https://github.com/user-attachments/assets/7e0190b8-23f8-45b1-b4e9-0c4fb8057dda)
+
+```C
+#include <stdio.h>
+#include <string.h>
+union thuvien {
+	int Nam;
+	char tentg[100];
+	char tentp[100];
+};
+int main(){
+	union thuvien tv;
+	tv.Nam = 1900;
+	strcpy ( tv.tentg, "ffhkgh");
+	strcpy ( tv.tentp, "Drama");
+	printf("Nam: %d\nTen tac gia: %s\nTen tac pham: %s",tv.Nam,tv.tentg,tv.tentp);
+	
+}
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/a9a778b3-a1ab-4e20-94c5-47b68ac0a298)
+
 
 ## Bài tập
 ```C
