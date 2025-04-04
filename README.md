@@ -126,7 +126,8 @@ int main (){
 ## Các biến được khai báo lệch bao nhiêu đơn vị?
  - @@ mình sẽ thêm đoạn code này vào để tính sự chênh lệch đơn vị(byte) T_T
 ``` C
-    printf("a -> b: %d byte\n", (char*)&a - (char*)&b); //char* là 8byte nha, không ép kiểu thì nó báo lỗi nên phải ép sang kiểu nào 8byte cho tương ứng với độ lớn của địa chỉ là được, ở đây chắc đều code chương trình 64bit nên sẽ là độ lớn địa chỉ mặc định 8byte 
+//char* hay bất kì con trỏ nào khác đều mặc định là 8byte (trong chương trình 64bit), không ép kiểu thì nó báo lỗi nên phải ép sang kiểu nào 8byte cho tương ứng với độ lớn của địa chỉ.
+    printf("a -> b: %d byte\n", (char*)&a - (char*)&b); 
     printf("b -> c: %d byte\n", (char*)&b - (char*)&c);
     printf("c -> d: %d byte\n", (char*)&c - (char*)&d);
     printf("d -> e: %d byte\n", (char*)&d - (char*)&e);
