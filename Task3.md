@@ -173,7 +173,7 @@ int main (){
 				break;
 			} else {
 			printf("Ban vua chon chuc nang 3: Chen them mot sinh vien vao sau sinh vien bat ki\n");	
-			printf("Nhap ho ten sinh vien can chen: ");
+			printf("Nhap ho ten sinh vien o truoc: ");
                         fgets(hotencantim, sizeof(hotencantim), stdin);
                         hotencantim[strcspn(hotencantim,"\n")] = '\0';
 			n = chensvbatky(sinhvien,n,hotencantim);
