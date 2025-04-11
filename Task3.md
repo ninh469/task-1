@@ -181,6 +181,7 @@ void menu(){
 	printf("3. Chen them mot sinh vien vao sau sinh vien bat ki\n");
     printf("4. Xoa mot sinh vien\n");
     printf("5. Sua mot sinh vien\n");
+    printf("6. Thoat\n");
     printf("Lua chon: ");
 }
 int main (){
@@ -252,6 +253,7 @@ int main (){
 			printf("Danh sach da duoc cap nhat\n");
 			hienthidanhsach(sinhvien,n);
 			break;
+			case 6: return 0;
 	     	}
 		    default : printf("Xin hay tha cho toi, Vui long nhap lai\n");	
 	    } menu();
