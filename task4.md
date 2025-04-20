@@ -335,14 +335,7 @@ int peek(){
 	if(isEmpty()) return -1;
 	return top->data;
 }
-void destroy()
-{
-	while (!isEmpty()){
-		pop();
-	}
-}
 void chuyencoso(int n, int a){
-	destroy();
 	while(n != 0)
 	{
 		push(n%a);
