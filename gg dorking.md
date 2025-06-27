@@ -36,6 +36,16 @@ site:cyberjutsu.io "blue team" có nghĩa là mình chỉ tìm `blue team` trong
 ![image](https://github.com/user-attachments/assets/b185cef2-9df0-4584-affb-1826bff037a8)
 
 - Mình có thể dùng thêm cú pháp `filetype` nữa tùy vào mục đích 
+- Mấy cái hay hay e mò mò được
+![image](https://github.com/user-attachments/assets/a2807584-b7ad-4067-ad1b-87b6adb39975)
+jvtr sao có mỗi AT21D bị lộ gmail act @@
+![image](https://github.com/user-attachments/assets/96b9ba39-109b-4161-9f25-02cb9cc9eb7e)
+![image](https://github.com/user-attachments/assets/b3a7285f-2be4-4674-8f73-7bb687ad3ef0)
+![image](https://github.com/user-attachments/assets/91554e56-7f5e-4b63-bf97-1b6a3f5b9036)
+sao k thấy itra :(((
+![image](https://github.com/user-attachments/assets/e4e28c55-dbd6-4001-adaa-870b82a8a9e4)
+
+
 
 
 
